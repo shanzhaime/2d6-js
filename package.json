@@ -4,7 +4,9 @@
   "description": "Dice rolling and analysis library.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "flow-remove-types src/ -d lib/",
+    "prepublish": "yarn run build"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/shanzhaime/2d6-js/issues"
   },
-  "homepage": "https://github.com/shanzhaime/2d6-js#readme"
+  "homepage": "https://github.com/shanzhaime/2d6-js#readme",
+  "devDependencies": {
+    "flow-bin": "^0.84.0",
+    "flow-remove-types": "^1.2.3"
+  }
 }

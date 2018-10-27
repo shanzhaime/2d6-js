@@ -1,1 +1,1 @@
-module.exports = require('./src/DiceChance.js')
+module.exports = require('./lib/DiceChance.js')
