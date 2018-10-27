@@ -30,6 +30,21 @@ const DiceChance = {
       new DiceSides(parseInt(sides, 10)),
     );
   },
+
+  roll: function(formula: string|Dices) {
+    let parsedFormula;
+    if (typeof formula === 'string') {
+      parsedFormula = DiceChance.parse(formula);
+    } else {
+      parsedFormula = formula;
+    }
+
+    let result = 0;
+    for (let i = 0; i < parsedFormula.diceAmount.value; i++) {
+      result += Math.floor(Math.random() * parsedFormula.diceSides.value) + 1;
+    }
+    return result;
+  },
 };
 
 module.exports = DiceChance;
