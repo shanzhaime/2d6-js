@@ -1,0 +1,24 @@
+{
+  "name": "2d6",
+  "version": "1.0.0",
+  "description": "Dice rolling and analysis library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanzhaime/2d6-js.git"
+  },
+  "keywords": [
+    "dice",
+    "random",
+    "analysis"
+  ],
+  "author": "catchen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shanzhaime/2d6-js/issues"
+  },
+  "homepage": "https://github.com/shanzhaime/2d6-js#readme"
+}
