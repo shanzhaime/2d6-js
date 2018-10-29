@@ -1,6 +1,7 @@
 // @flow strict
 
 const { DiceAmount, DiceSides, Dice } = require("./Tokens");
+const Analyzer = require("./Analyzer");
 
 const dicePattern = /(\d+)d(\d+)/;
 
@@ -45,6 +46,7 @@ const DiceChance = {
     } else {
       parsedFormula = formula;
     }
+    return Analyzer.analyzeDice(parsedFormula);
   }
 };
 
