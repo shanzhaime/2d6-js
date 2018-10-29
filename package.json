@@ -1,6 +1,6 @@
 {
   "name": "dice-chance",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Dice rolling and analysis library.",
   "main": "index.js",
   "scripts": {
