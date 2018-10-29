@@ -29,5 +29,5 @@ class Dice {
 module.exports = {
   DiceAmount,
   DiceSides,
-  Dice,
-}
+  Dice
+};
