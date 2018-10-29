@@ -16,7 +16,7 @@ class DiceSides {
   }
 }
 
-class Dices {
+class Dice {
   diceAmount: DiceAmount;
   diceSides: DiceSides;
 
@@ -29,5 +29,5 @@ class Dices {
 module.exports = {
   DiceAmount,
   DiceSides,
-  Dices,
+  Dice,
 }
