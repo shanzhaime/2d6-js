@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shanzhaime/2d6-js.git"
+    "url": "git+https://github.com/shanzhaime/dice-chance.git"
   },
   "keywords": [
     "dice",
@@ -20,9 +20,9 @@
   "author": "catchen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shanzhaime/2d6-js/issues"
+    "url": "https://github.com/shanzhaime/dice-chance/issues"
   },
-  "homepage": "https://github.com/shanzhaime/2d6-js#readme",
+  "homepage": "https://github.com/shanzhaime/dice-chance#readme",
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all",
