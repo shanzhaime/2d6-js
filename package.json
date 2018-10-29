@@ -23,8 +23,21 @@
     "url": "https://github.com/shanzhaime/2d6-js/issues"
   },
   "homepage": "https://github.com/shanzhaime/2d6-js#readme",
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "arrowParens": "always"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "devDependencies": {
     "flow-bin": "^0.84.0",
-    "flow-remove-types": "^1.2.3"
+    "flow-remove-types": "^1.2.3",
+    "husky": "^1.1.2",
+    "prettier": "1.14.3",
+    "pretty-quick": "^1.8.0"
   }
 }
