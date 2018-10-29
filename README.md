@@ -20,4 +20,33 @@ This version aims to support multiple dices of different number of sides. Accept
 
 ### v4+
 
-Priority for future versions are undetermined. 
+Priority for future versions are undetermined.
+
+## API
+
+Call `DiceChance.roll` to roll dice with acceptable formula. Examples:
+
+```
+DiceChance.roll('1d6'); // A number between 1 and 6
+DiceChance.roll('2d6'); // A number between 2 and 12
+```
+
+Call `DiceChance.analyze` to calculate the probability distribution of an acceptable formula. Examples:
+
+```
+DiceChance.analyze('1d6');
+// { '1': 1, '2': 1, '3': 1, '4': 1, '5': 1, '6': 1 }
+
+DiceChance.analyze('2d6');
+// { '2': 1,
+//   '3': 2,
+//   '4': 3,
+//   '5': 4,
+//   '6': 5,
+//   '7': 6,
+//   '8': 5,
+//   '9': 4,
+//   '10': 3,
+//   '11': 2,
+//   '12': 1 }
+```
