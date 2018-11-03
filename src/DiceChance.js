@@ -1,33 +1,19 @@
 // @flow strict
 
-const { DiceAmount, DiceSides, Dice } = require("./Tokens");
-const Analyzer = require("./Analyzer");
+import type { Dice } from './Tokens';
 
-const dicePattern = /(\d+)d(\d+)/;
+const Parser = require('./Parser');
+const Analyzer = require('./Analyzer');
 
 const DiceChance = {
   parse: function(formula: string): Dice {
-    const matches = formula.match(dicePattern);
-    if (!matches) {
-      throw new Error("Invalid formula.");
-    }
-
-    const [whole, amount, sides] = matches;
-
-    if (whole !== formula) {
-      throw new Error("Invalid formula");
-    }
-
-    return new Dice(
-      new DiceAmount(parseInt(amount, 10)),
-      new DiceSides(parseInt(sides, 10))
-    );
+    return Parser.parseFormula(formula);
   },
 
   roll: function(formula: string | Dice) {
     let parsedFormula;
-    if (typeof formula === "string") {
-      parsedFormula = DiceChance.parse(formula);
+    if (typeof formula === 'string') {
+      parsedFormula = Parser.parseFormula(formula);
     } else {
       parsedFormula = formula;
     }
@@ -41,13 +27,13 @@ const DiceChance = {
 
   analyze: function(formula: string | Dice) {
     let parsedFormula;
-    if (typeof formula === "string") {
-      parsedFormula = DiceChance.parse(formula);
+    if (typeof formula === 'string') {
+      parsedFormula = Parser.parseFormula(formula);
     } else {
       parsedFormula = formula;
     }
     return Analyzer.analyzeDice(parsedFormula);
-  }
+  },
 };
 
 module.exports = DiceChance;
