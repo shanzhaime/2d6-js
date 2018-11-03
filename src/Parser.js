@@ -9,7 +9,7 @@ const {
 } = require('./Tokens');
 
 const formulaPattern = /^\s*(\d+)d(\d+)\s*((?:[\+-]\s*\d+\s*)*)$/;
-const arithmeticPattern = /^([\+-])\s*(\d+)\s*/;
+const arithmeticPattern = /^([+-])\s*(\d+)\s*/;
 
 const Parser = {
   parseFormula(formula: string): Formula {
