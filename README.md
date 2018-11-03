@@ -1,4 +1,4 @@
-# dice-chance
+# dice-chance [![Build Status](https://travis-ci.org/shanzhaime/dice-chance.svg?branch=master)](https://travis-ci.org/shanzhaime/dice-chance) [![codecov](https://codecov.io/gh/shanzhaime/dice-chance/branch/master/graph/badge.svg)](https://codecov.io/gh/shanzhaime/dice-chance)
 
 This is a dice rolling and analysis library. The goal is to accept a dice rolling formula and calculate the probability distribution.
 
