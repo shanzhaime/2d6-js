@@ -8,6 +8,6 @@ cache:
   directories:
     - node_modules
 script:
-  - yarn flow
-  - yarn test
   - yarn build
+  - yarn flow
+  - yarn test src --coverage --collectCoverageFrom=src/** && yarn codecov -C
