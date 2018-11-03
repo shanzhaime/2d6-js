@@ -1,5 +1,7 @@
 // @flow strict
 
+type Operator = '+' | '-';
+
 class DiceAmount {
   value: number;
 
@@ -26,8 +28,34 @@ class Dice {
   }
 }
 
+class Arithmetic {
+  leftValue: Dice | Arithmetic;
+  rightValue: number;
+  operator: Operator;
+
+  constructor(
+    leftValue: Dice | Arithmetic,
+    rightValue: number,
+    operator: Operator,
+  ) {
+    this.leftValue = leftValue;
+    this.rightValue = rightValue;
+    this.operator = operator;
+  }
+}
+
+class Formula {
+  value: Dice | Arithmetic;
+
+  constructor(formula: Dice | Arithmetic) {
+    this.value = formula;
+  }
+}
+
 module.exports = {
   DiceAmount,
   DiceSides,
-  Dice
+  Dice,
+  Arithmetic,
+  Formula,
 };
