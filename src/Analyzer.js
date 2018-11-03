@@ -20,6 +20,11 @@ const Analyzer = {
     const result = {};
     const n = dice.diceAmount.value;
     const m = dice.diceSides.value - 1;
+
+    if (n === 0 || m === 0) {
+      return {};
+    }
+
     for (let k = 0; k < n * m + 1; k++) {
       let sum = 0;
       for (let s = 0; s < Math.floor(k / (m + 1)) + 1; s++) {

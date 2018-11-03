@@ -5,6 +5,8 @@ const parsed1D6 = new Dice(new DiceAmount(1), new DiceSides(6));
 const parsed2D6 = new Dice(new DiceAmount(2), new DiceSides(6));
 const parsed3D4 = new Dice(new DiceAmount(3), new DiceSides(4));
 const parsed4D20 = new Dice(new DiceAmount(4), new DiceSides(20));
+const parsed0D6 = new Dice(new DiceAmount(0), new DiceSides(6));
+const parsed2D0 = new Dice(new DiceAmount(2), new DiceSides(0));
 
 it('can parse single dice multiple rolls', () => {
   const analyzed1D6 = Analyzer.analyzeDice(parsed1D6);
@@ -126,4 +128,14 @@ it('can parse single dice multiple rolls', () => {
     '79': 4,
     '80': 1,
   });
+});
+
+it('can handle 0 dice', () => {
+  const analyzed0D6 = Analyzer.analyzeDice(parsed0D6);
+  expect(analyzed0D6).toEqual({});
+});
+
+it('can handle 0 side dice', () => {
+  const analyzed2D0 = Analyzer.analyzeDice(parsed2D0);
+  expect(analyzed2D0).toEqual({});
 });
