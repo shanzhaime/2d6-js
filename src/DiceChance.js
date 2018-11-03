@@ -11,7 +11,7 @@ const DiceChance = {
     return Parser.parseFormula(formula);
   },
 
-  roll: function(formula: string | Formula) {
+  roll: function(formula: string | Formula): number {
     let parsedFormula;
     if (typeof formula === 'string') {
       parsedFormula = Parser.parseFormula(formula);
@@ -40,19 +40,14 @@ const DiceChance = {
     return result;
   },
 
-  analyze: function(formula: string | Formula) {
+  analyze: function(formula: string | Formula): { [number]: number } {
     let parsedFormula;
     if (typeof formula === 'string') {
       parsedFormula = Parser.parseFormula(formula);
     } else {
       parsedFormula = formula;
     }
-    const formulaValue = parsedFormula.value;
-    if (formulaValue instanceof Dice) {
-      return Analyzer.analyzeDice(formulaValue);
-    } else {
-      throw new Error('Not yet implemented.');
-    }
+    return Analyzer.analyzeFormula(parsedFormula);
   },
 };
 

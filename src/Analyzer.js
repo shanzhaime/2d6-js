@@ -1,6 +1,8 @@
 // @flow strict
 
-import type { Dice } from './Tokens';
+import type { Formula } from './Tokens';
+
+const { Dice, Arithmetic } = require('./Tokens');
 
 const memoizedFactorialNumbers = [1];
 
@@ -35,6 +37,40 @@ const Analyzer = {
       }
       result[k + n] = sum;
     }
+    return result;
+  },
+
+  analyzeFormula(formula: Formula): { [number]: number } {
+    let formulaValue = formula.value;
+    let modifier = 0;
+    while (formulaValue instanceof Arithmetic) {
+      switch (formulaValue.operator) {
+        case '+':
+          modifier += formulaValue.rightValue;
+          break;
+        case '-':
+          modifier -= formulaValue.rightValue;
+          break;
+      }
+      formulaValue = formulaValue.leftValue;
+    }
+
+    let result = {};
+    if (formulaValue instanceof Dice) {
+      result = Analyzer.analyzeDice(formulaValue);
+    }
+    if (modifier !== 0) {
+      const keys = Object.keys(result).map((stringValue) => {
+        return parseInt(stringValue, 10);
+      });
+      const sortedKeys =
+        modifier > 0 ? keys.sort((x, y) => y - x) : keys.sort((x, y) => x - y);
+      sortedKeys.forEach((key) => {
+        result[key + modifier] = result[key];
+        delete result[key];
+      });
+    }
+
     return result;
   },
 };

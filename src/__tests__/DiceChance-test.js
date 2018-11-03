@@ -47,33 +47,33 @@ it('can roll with a formula', () => {
 });
 
 it('can analyze formula', () => {
-  let analyzed2D6 = DiceChance.analyze(formula2D6);
-  expect(analyzed2D6).toEqual({
-    '2': 1,
-    '3': 2,
-    '4': 3,
-    '5': 4,
-    '6': 5,
-    '7': 6,
-    '8': 5,
+  let analyzed2D6Plus4 = DiceChance.analyze(formula2D6Plus4);
+  expect(analyzed2D6Plus4).toEqual({
+    '6': 1,
+    '7': 2,
+    '8': 3,
     '9': 4,
-    '10': 3,
-    '11': 2,
-    '12': 1,
+    '10': 5,
+    '11': 6,
+    '12': 5,
+    '13': 4,
+    '14': 3,
+    '15': 2,
+    '16': 1,
   });
 
-  analyzed2D6 = DiceChance.analyze(DiceChance.parse(formula2D6));
-  expect(analyzed2D6).toEqual({
-    '2': 1,
-    '3': 2,
-    '4': 3,
-    '5': 4,
-    '6': 5,
-    '7': 6,
-    '8': 5,
+  analyzed2D6Plus4 = DiceChance.analyze(DiceChance.parse(formula2D6Plus4));
+  expect(analyzed2D6Plus4).toEqual({
+    '6': 1,
+    '7': 2,
+    '8': 3,
     '9': 4,
-    '10': 3,
-    '11': 2,
-    '12': 1,
+    '10': 5,
+    '11': 6,
+    '12': 5,
+    '13': 4,
+    '14': 3,
+    '15': 2,
+    '16': 1,
   });
 });
