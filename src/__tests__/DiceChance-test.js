@@ -6,8 +6,9 @@ const formula2D6 = '2d6';
 it('can parse formula', () => {
   const parsed2D6 = DiceChance.parse(formula2D6);
   expect(parsed2D6 instanceof Tokens.Dice);
-  expect(parsed2D6.diceAmount.value).toBe(2);
-  expect(parsed2D6.diceSides.value).toBe(6);
+  expect(parsed2D6.value instanceof Tokens.Dice);
+  expect(parsed2D6.value.diceAmount.value).toBe(2);
+  expect(parsed2D6.value.diceSides.value).toBe(6);
 });
 
 it('can roll with a formula', () => {
