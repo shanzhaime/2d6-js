@@ -1,6 +1,6 @@
 // @flow strict
 
-import type { Dice } from "./Tokens";
+import type { Dice } from './Tokens';
 
 const memoizedFactorialNumbers = [1];
 
@@ -11,7 +11,7 @@ function factorial(n: number): number {
 }
 
 function combination(n: number, k: number): number {
-  return factorial(n) / factorial(k) / factorial(n - k);
+  return Math.round(factorial(n) / factorial(k) / factorial(n - k));
 }
 
 const Analyzer = {
@@ -31,7 +31,7 @@ const Analyzer = {
       result[k + n] = sum;
     }
     return result;
-  }
+  },
 };
 
 module.exports = Analyzer;
