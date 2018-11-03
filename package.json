@@ -4,7 +4,7 @@
   "description": "Dice rolling and analysis library.",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest src",
     "build": "flow-remove-types src/ -d lib/",
     "prepublish": "yarn run build"
   },
