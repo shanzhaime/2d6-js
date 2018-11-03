@@ -19,16 +19,25 @@ const DiceChance = {
       parsedFormula = formula;
     }
 
-    const formulaValue = parsedFormula.value;
+    let formulaValue = parsedFormula.value;
+    let result = 0;
+    while (formulaValue instanceof Arithmetic) {
+      switch (formulaValue.operator) {
+        case '+':
+          result += formulaValue.rightValue;
+          break;
+        case '-':
+          result -= formulaValue.rightValue;
+          break;
+      }
+      formulaValue = formulaValue.leftValue;
+    }
     if (formulaValue instanceof Dice) {
-      let result = 0;
       for (let i = 0; i < formulaValue.diceAmount.value; i++) {
         result += Math.floor(Math.random() * formulaValue.diceSides.value) + 1;
       }
-      return result;
-    } else {
-      throw new Error('Not yet implemented.');
     }
+    return result;
   },
 
   analyze: function(formula: string | Formula) {
