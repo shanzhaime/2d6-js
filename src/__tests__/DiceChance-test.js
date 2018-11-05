@@ -3,6 +3,7 @@ const Tokens = require('../Tokens');
 
 const formula2D6 = '2d6';
 const formula2D6Plus4 = '2d6 + 4';
+const formula3D4Minus3 = '3d4 - 3';
 const rollTimes = 10000;
 
 it('can parse formula', () => {
@@ -43,6 +44,17 @@ it('can roll with a formula', () => {
     rolled2D6Plus4 = DiceChance.roll(parsed2D6Plus4);
     expect(rolled2D6Plus4).toBeGreaterThanOrEqual(6);
     expect(rolled2D6Plus4).toBeLessThanOrEqual(16);
+  }
+
+  let rolled3D4Minus3 = DiceChance.roll(formula3D4Minus3);
+  expect(rolled3D4Minus3).toBeGreaterThanOrEqual(0);
+  expect(rolled3D4Minus3).toBeLessThanOrEqual(9);
+
+  const parsed3D4Minus3 = DiceChance.parse(formula3D4Minus3);
+  for (let i = 0; i < rollTimes; i++) {
+    rolled3D4Minus3 = DiceChance.roll(parsed3D4Minus3);
+    expect(rolled3D4Minus3).toBeGreaterThanOrEqual(0);
+    expect(rolled3D4Minus3).toBeLessThanOrEqual(9);
   }
 });
 
