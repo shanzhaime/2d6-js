@@ -8,6 +8,7 @@
 
 # development
 /src
+/lib/**/__tests__
 
 # misc
 .DS_Store
@@ -15,6 +16,9 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.babelrc
+.flowconfig
+.travis.yml
 
 npm-debug.log*
 yarn-debug.log*
