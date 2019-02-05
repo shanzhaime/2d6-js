@@ -1066,8 +1066,8 @@ find-up@^3.0.0:
     locate-path "^3.0.0"
 
 flow-bin@^0.92.0:
-  version "0.92.0"
-  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.92.0.tgz#f5bf3e808b17b480e067ac673829ca715a168bea"
+  version "0.92.1"
+  resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.92.1.tgz#32c136c07235f30c42dc0549a0790f370fad4070"
 
 flow-remove-types@^1.2.3:
   version "1.2.3"
