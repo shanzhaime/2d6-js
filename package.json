@@ -39,7 +39,7 @@
     "codecov": "^3.1.0",
     "flow-bin": "^0.97.0",
     "flow-remove-types": "^1.2.3",
-    "husky": "^1.1.2",
+    "husky": "^2.1.0",
     "jest": "^24.0.0",
     "prettier": "1.17.0",
     "pretty-quick": "^1.8.0"
