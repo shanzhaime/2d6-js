@@ -1334,15 +1334,15 @@ flow-bin@^0.106.0:
   version "0.106.1"
   resolved "https://registry.yarnpkg.com/flow-bin/-/flow-bin-0.106.1.tgz#78765c5fd7f23121cf58d4236ac7cb63befaf6ba"
 
-flow-parser@^0.105.2:
-  version "0.105.2"
-  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.105.2.tgz#7ba3ab7718c0519979c2f061e89c7b3c3624ee96"
+flow-parser@^0.106.2:
+  version "0.106.2"
+  resolved "https://registry.yarnpkg.com/flow-parser/-/flow-parser-0.106.2.tgz#99b4e3d4e95c0f31e67f46f1ff21845dfb910da7"
 
 flow-remove-types@^2.99.0:
-  version "2.105.2"
-  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-2.105.2.tgz#5c597ebbfd0a73ae12b4ec182cd6061759de7468"
+  version "2.106.2"
+  resolved "https://registry.yarnpkg.com/flow-remove-types/-/flow-remove-types-2.106.2.tgz#0e90767f750f149ec26ff674a9e272c07caabaf2"
   dependencies:
-    flow-parser "^0.105.2"
+    flow-parser "^0.106.2"
     pirates "^3.0.2"
     vlq "^0.2.1"
 
