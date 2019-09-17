@@ -8,7 +8,7 @@ const {
   Formula,
 } = require('./Tokens');
 
-const formulaPattern = /^\s*(\d+)d(\d+)\s*((?:[\+-]\s*\d+\s*)*)$/;
+const formulaPattern = /^\s*(\d+)d(\d+)\s*((?:[+-]\s*\d+\s*)*)$/;
 const arithmeticPattern = /^([+-])\s*(\d+)\s*/;
 
 const Parser = {
@@ -18,7 +18,7 @@ const Parser = {
       throw new Error('Invalid formula.');
     }
 
-    const [whole, amount, sides, remaining] = matches;
+    const [amount, sides, remaining] = matches.slice(1);
 
     const dice = new Dice(
       new DiceAmount(parseInt(amount, 10)),
