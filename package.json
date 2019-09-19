@@ -33,10 +33,35 @@
       "pre-commit": "pretty-quick --staged"
     }
   },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "commonjs": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2018
+    },
+    "plugins": [
+      "flowtype"
+    ],
+    "rules": {}
+  },
   "devDependencies": {
+    "babel-eslint": "^10.0.3",
     "babel-jest": "^23.6.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "codecov": "^3.1.0",
+    "eslint": "^6.4.0",
+    "eslint-plugin-flowtype": "^4.3.0",
     "flow-bin": "^0.108.0",
     "flow-remove-types": "^2.99.0",
     "husky": "^3.0.0",
