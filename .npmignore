@@ -19,6 +19,7 @@
 .babelrc
 .flowconfig
 .travis.yml
+.mergify.yml
 
 npm-debug.log*
 yarn-debug.log*
